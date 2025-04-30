@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolicyFit - Underwriting Check</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.12.313/pdf.min.js"></script>
+</head>
+<body class="dark-mode">
+  <div class="container">
+    <h1>PolicyFit</h1>
+
+    <label for="illnessInput">Enter illnesses (comma separated):</label>
+    <textarea id="illnessInput" placeholder="e.g. Diabetes, Hypertension" oninput="realTimeCheck()"></textarea>
+
+    <label for="fileUpload">Upload medical record (TXT/CSV/PDF):</label>
+    <input type="file" id="fileUpload" accept=".txt,.csv,.pdf" />
+
+    <button onclick="checkIllness()">Check Status</button>
+    <button onclick="copyResult()">📋 Copy Result</button>
+
+    <div id="result"></div>
+    <div id="warnings"></div>
+
+    <p class="disclaimer">
+      Disclaimer: This tool is for guideline purposes only. Final underwriting decisions may differ across insurers. Based on common medical underwriting practices.
+    </p>
+    <footer>Created by Vijaykandasamy A FIII, ACII</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
